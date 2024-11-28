@@ -27,10 +27,15 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
       - name: Install dependencies
         run: |
-          npm install -g @lhci/cli@0.14.x
-          npm install -g http-server
+          pnpm add -g @lhci/cli@0.14.x
+          pnpm add -g http-server
 
       - name: Start local server
         run: http-server . -p 8080 &
