@@ -3,15 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {    
-    "dev": "vite", 
-    "build": "vite build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm convert-images && vite build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "convert-images": "node scripts/convert-images.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vite": "^6.0.1"
-  }
+    "imagemin-avif": "^0.1.6",
+    "imagemin-webp": "^8.0.0",
+    "sharp": "^0.33.5",
+    "vite": "^6.0.1",
+    "vite-plugin-imagemin": "^0.6.1"
+  },
+  "type": "module"
 }
